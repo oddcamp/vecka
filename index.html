@@ -121,5 +121,15 @@
         s.parentNode.insertBefore(t, s);
       })();
     </script>
+
+    <script src="konami.js"></script>
+    <script>
+      var easter_egg = new Konami();
+      easter_egg.code = function() {
+        var b = document.getElementsByTagName("body")[0];
+        b.style.fontFamily = 'Comic Sans MS, Comic Sans, serif';
+      }
+      easter_egg.load();
+    </script>
   </body>
 </html>
