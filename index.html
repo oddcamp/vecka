@@ -1,46 +1,101 @@
+<!-- Helveckicka! https://github.com/kollegorna/vecka.io -->
 <!DOCTYPE html>
-<html>
+<html lang="sv">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <style>
       body {
-        background-color: #BF9344;
-        color: #37311E;
-        font-family: 'Helvetica', Arial, sans-serif; 
-        font-size: 320px;
-        line-height: 320px; 
-        font-weight: bold;
+        background: #f4e7b7;
+        color: #403e35;
+        font: bold 96px/1 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
         text-align: center;
       }
-      p#vecka {
-        display: block;
-        position: absolute;
-        width:420px;
-        height:356px;
-        top: 50%;
-        margin-top: -160px;
-        left: 50%;
-        margin-left:-210px;
+
+      a {
+        color: #ACA389;
+        text-decoration: none;
+        -webkit-transition-duration: 0.4s;
+        -moz-transition-duration: 0.4s;
+        -o-transition-duration: 0.4s;
+        transition-duration: 0.4s;
       }
-      @media all and (max-width: 480px) {
-        p#vecka {
-          position: relative;
-          display: inline;
-          margin: 0;
-          left: 0;
-          top: 70px;
-          font-size: 280px;
+
+      a:hover {
+        color: #403e35;
+      }
+
+      #week {
+        bottom: 0;
+        height: 96px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top:0;
+        width: 100%;
+      }
+
+      #love {
+        font-size: 11px;
+        font-weight: normal;
+        line-height: 16px;
+        left: 20px;
+        position: absolute;
+        top: 20px;
+      }
+
+      #love i {
+        color: #ACA389;
+        display: inline-block;
+        font-size: 13px;
+        font-style: normal;
+        margin-right: 3px;
+        -webkit-transition-duration: 0.4s;
+        -moz-transition-duration: 0.4s;
+        -o-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+      }
+
+      #love:hover i {
+        color: red;
+      }
+
+      @media all and (min-width: 480px) {
+        body {
+          font-size: 180px;
+        }
+
+        #week {
+          height: 180px;
+        }
+      }
+
+      @media all and (min-width: 760px) {
+        body {
+          font-size: 320px;
+        }
+
+        #week {
+          height: 320px;
         }
       }
     </style>
-    <title>
-      Vilken vecka är det?
-    </title>
+    <title>Vilken vecka är det?</title>
+
+    <meta name="title" content="Vecka.io">
+    <meta name="description" content="Veckorna blir bättre med Helvetica.">
+
+    <meta property="og:title" content="Vecka.io">
+    <meta property="og:description" content="Veckorna blir bättre med Helvetica.">
+    <meta property="og:image" content="/avatar.png">
   </head>
   <body>
-    <p id="vecka"></p>
+    <time id="week"></time>
+    <a id="love" href="http://www.kollegorna.se"><i>♥</i> Loved by Kollegorna</a>
     <script>
       Date.prototype.getWeekNumber = function(){
         var d = new Date(+this);
@@ -50,7 +105,7 @@
       };
       d = new Date();
       week = d.getWeekNumber();
-      document.getElementById('vecka').innerHTML = week;
+      document.getElementById('week').innerHTML = week;
     </script>
   </body>
 </html>
