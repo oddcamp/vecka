@@ -1,6 +1,7 @@
 CACHE MANIFEST
 # Cache manifest version 0.0.2
 
+CACHE:
 32_vecka.io-icon.png
 64_vecka.io-icon.png
 apple-touch-icon-114x114.png
@@ -20,3 +21,5 @@ mediumtile.png
 smalltile.png
 widetile.png
 
+NETWORK:
+*
